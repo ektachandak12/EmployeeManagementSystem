@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
-import { createEmployee, getEmployee } from '../services/EmployeeService'
+import { createEmployee, getEmployee, updateEmployee } from '../services/EmployeeService'
 
 const EmployeeComponent = () => {
 
@@ -30,23 +30,35 @@ const EmployeeComponent = () => {
         }
     }, [id])
 
-function saveEmployee(e){
+function saveOrUpdateEmployee(e){
     e.preventDefault();
 
       console.log("Submit clicked");
 
     if(validateForm()){
+
         const employee= {firstName, lastName, email}
         console.log(employee)
 
-        createEmployee(employee)
-        .then((response) => {
-            console.log(response.data);
-            navigator('/employees');
-        })
-        .catch(error => {
-            console.error(error);
-        });
+        if(id){
+            updateEmployee(id, employee).then((response) => {
+                console.log(response.data);
+
+                navigator('/employees');
+            }).catch(error =>{
+                console.error(error);
+            })
+        }else{
+        
+            createEmployee(employee)
+            .then((response) => {
+                console.log(response.data);
+                navigator('/employees');
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        }
     }    
 }
 
@@ -103,7 +115,7 @@ function pageTitle(){
                         pageTitle()
                     }
                     <div className='card-body'>
-                        <form onSubmit={saveEmployee}>
+                        <form onSubmit={saveOrUpdateEmployee}>
                             <div className='form-group mb-2'>
                                 <label className='form-label'>First Name:</label>
                                 <input
