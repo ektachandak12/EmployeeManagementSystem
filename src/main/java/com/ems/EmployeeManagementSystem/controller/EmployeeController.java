@@ -15,6 +15,9 @@ import java.util.List;
  * calls the Service layer to perform business logic, and returns the
  * appropriate HTTP response.
  */
+//This annotation will ensure that both react and springboot
+//aplication run on the same server i.e 3000
+@CrossOrigin("*")
 @AllArgsConstructor          // Generates a constructor for dependency injection.
 @RestController              // Marks this class as a REST Controller.
 @RequestMapping("/api/employees") // Base URL for all employee-related APIs.
