@@ -1,6 +1,6 @@
-import React , {useState} from 'react'
-import { useNavigate } from 'react-router-dom'
-import { createEmployee } from '../services/EmployeeService'
+import React, {useEffect, useState} from 'react';
+import { useNavigate, useParams } from 'react-router-dom'
+import { createEmployee, getEmployee } from '../services/EmployeeService'
 
 const EmployeeComponent = () => {
 
@@ -14,7 +14,21 @@ const EmployeeComponent = () => {
         email: ''
     })
 
+    const {id} = useParams();
+
     const navigator = useNavigate();
+
+    useEffect(() => {
+        if(id){
+            getEmployee(id).then((response) => {
+                setFirstName(response.data.firstName);
+                setLastName(response.data.lastName);
+                setEmail(response.data.email);
+            }).catch(error => {
+                console.error(error);
+            })
+        }
+    }, [id])
 
 function saveEmployee(e){
     e.preventDefault();
@@ -70,6 +84,14 @@ function validateForm(){
 
 }
 
+function pageTitle(){
+    if(id){
+        return <h2 className='text-center'>Update Employee</h2>
+    }else{
+        return <h2 className='text-center'>Add Employee</h2>
+    }
+}
+
   return (
     <div className='container'>
         <br/><br/>
@@ -77,7 +99,9 @@ function validateForm(){
             <div className="col-md-6 offset-md-3">
                 <div className="card">
                     <br/>
-                    <h2 className='text-center'>Add Employee</h2>
+                    {
+                        pageTitle()
+                    }
                     <div className='card-body'>
                         <form onSubmit={saveEmployee}>
                             <div className='form-group mb-2'>
