@@ -7,7 +7,7 @@ A Full-Stack Employee Management System built using **Spring Boot**, **React**, 
 Manage employee records with complete **CRUD (Create, Read, Update, Delete)** operations through a clean and responsive web interface.
 
 ![Java](https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=openjdk)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=springboot)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.0.7-6DB33F?style=for-the-badge&logo=springboot)
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![Maven](https://img.shields.io/badge/Maven-Build-C71A36?style=for-the-badge&logo=apachemaven)
@@ -291,7 +291,7 @@ npm run dev
 The frontend starts on:
 
 ```
-http://localhost:5173
+http://localhost:3000
 ```
 
 ---
@@ -336,7 +336,7 @@ Through this project, I gained practical experience in:
 
 # 👩‍💻 Author
 
-**Ekta Chandak**
+**Ekta Naresh Chandak**
 
 Final Year B.Tech Student (Artificial Intelligence & Data Science)
 
