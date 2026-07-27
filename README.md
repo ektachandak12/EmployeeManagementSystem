@@ -194,21 +194,21 @@ EmployeeManagementSystem/
 <tr>
 <td align="center">
 <b>Employee List</b><br><br>
-<img src="screenshots/employee-list.png" width="850"/>
+<img src="Screenshots/employee-list.png" width="850"/>
 </td>
 </tr>
 
 <tr>
 <td align="center">
 <b>Add Employee</b><br><br>
-<img src="screenshots/add-employee.png" width="850"/>
+<img src="Screenshots/add-employee.png" width="850"/>
 </td>
 </tr>
 
 <tr>
 <td align="center">
 <b>Update Employee</b><br><br>
-<img src="screenshots/update-employee.png" width="850"/>
+<img src="Screenshots/update-employee.png" width="850"/>
 </td>
 </tr>
 </table>
